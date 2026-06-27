@@ -12,7 +12,7 @@
     {
       "name": "site-builder",
       "source": "./plugins/site-builder",
-      "description": "Build a high-converting, on-brand one-page website from a short brief. Writes the copy, designs the page, and outputs a single self-contained index.html you can open and host. No frameworks, no build step."
+      "description": "Build a high-converting one-page website with a real, committed design direction, not generic AI slop. Interviews you first, commits a design system tied to your business, then outputs a single self-contained index.html you can open and host. No frameworks, no build step."
     }
   ]
 }
