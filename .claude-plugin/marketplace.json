@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "oloye-skills",
+  "owner": {
+    "name": "Oloye. The AI Automation Guy"
+  },
+  "description": "Free, practical Claude Code skills from Oloye. The AI Automation Guy. Install once, get every skill as it ships.",
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "site-builder",
+      "source": "./plugins/site-builder",
+      "description": "Build a high-converting, on-brand one-page website from a short brief. Writes the copy, designs the page, and outputs a single self-contained index.html you can open and host. No frameworks, no build step."
+    }
+  ]
+}

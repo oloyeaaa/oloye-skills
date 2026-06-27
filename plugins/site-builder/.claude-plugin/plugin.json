@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "site-builder",
+  "displayName": "Site Builder",
+  "version": "1.0.0",
+  "description": "Build a high-converting, on-brand one-page website from a short brief. Writes the copy, designs the page, and builds a single self-contained responsive animated index.html you can open and host. No frameworks, no build step.",
+  "author": {
+    "name": "Oloye. The AI Automation Guy"
+  },
+  "homepage": "https://github.com/oloyeaaa/oloye-skills",
+  "repository": "https://github.com/oloyeaaa/oloye-skills",
+  "license": "MIT",
+  "keywords": ["website", "landing-page", "one-pager", "copywriting", "no-code", "html"]
+}
