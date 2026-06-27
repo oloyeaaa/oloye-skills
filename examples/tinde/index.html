@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TINDE — Slow-burned Scotch bonnet chili oil, made in Peckham</title>
+<meta name="description" content="Small-batch Scotch bonnet chili oil. Cold-infused for flavour first, heat second. Real ingredients, no sugar, no seed-oil filler. Buy a jar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char:#0B0A09;      /* charred black, the pan */
+    --char-2:#15120F;    /* raised panel */
+    --ember:#FF5A1F;     /* flame accent */
+    --bonnet:#C81E1E;    /* heat marker red */
+    --gold:#E8B23A;      /* infused-oil gold */
+    --ash:#A39B92;       /* muted text */
+    --bone:#F4EFE7;      /* near-white text */
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--char);
+    color:var(--bone);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ash)}
+  .display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+
+  /* ---- sticky bar ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,10,9,.82);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(163,155,146,.14);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Anton',sans-serif;font-size:1.55rem;letter-spacing:.04em;text-transform:uppercase}
+  .brand span{color:var(--ember)}
+  .btn{
+    display:inline-block;font-family:'Space Mono',monospace;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;
+    background:var(--ember);color:#1a0d05;padding:13px 22px;border-radius:2px;
+    transition:transform .18s ease, box-shadow .18s ease;
+    box-shadow:0 0 0 rgba(255,90,31,0);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,90,31,.32)}
+  .btn-ghost{background:transparent;color:var(--bone);border:1px solid rgba(163,155,146,.4)}
+  .btn-ghost:hover{border-color:var(--ember);box-shadow:none}
+
+  /* ---- heat gauge signature ---- */
+  .gauge{display:flex;align-items:flex-end;gap:5px;height:46px}
+  .gauge .tick{width:9px;border-radius:2px 2px 0 0;background:rgba(163,155,146,.22)}
+  .gauge .tick.on{background:linear-gradient(var(--gold),var(--ember) 55%,var(--bonnet))}
+  .gauge .tick:nth-child(1){height:36%}.gauge .tick:nth-child(2){height:48%}
+  .gauge .tick:nth-child(3){height:60%}.gauge .tick:nth-child(4){height:72%}
+  .gauge .tick:nth-child(5){height:84%}.gauge .tick:nth-child(6){height:96%}
+  .gauge.lit .tick.on{animation:rise .5s ease both}
+  .gauge.lit .tick.on:nth-child(2){animation-delay:.07s}
+  .gauge.lit .tick.on:nth-child(3){animation-delay:.14s}
+  .gauge.lit .tick.on:nth-child(4){animation-delay:.21s}
+  @keyframes rise{from{transform:scaleY(.05);opacity:0;transform-origin:bottom}to{transform:scaleY(1);opacity:1}}
+
+  /* ---- hero ---- */
+  .hero{position:relative;padding:84px 0 72px}
+  .hero::before{
+    content:"";position:absolute;top:-160px;right:-180px;width:520px;height:520px;
+    background:radial-gradient(circle, rgba(255,90,31,.30), rgba(255,90,31,0) 62%);
+    filter:blur(20px);z-index:0;pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:34px}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--ember)}
+  h1.display{font-size:clamp(3.1rem,11vw,7rem);margin:0 0 20px}
+  h1 .hot{color:var(--ember);display:inline-block}
+  .lede{font-size:1.18rem;color:var(--ash);max-width:30ch}
+  .lede strong{color:var(--bone);font-weight:500}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
+  .hero-gauge{display:flex;align-items:flex-end;gap:18px;margin-top:8px}
+  .hero-gauge .label{max-width:150px}
+
+  /* ---- section frame ---- */
+  section{position:relative}
+  .band{padding:78px 0;border-top:1px solid rgba(163,155,146,.12)}
+  .kicker{margin-bottom:18px}
+  h2.display{font-size:clamp(2rem,5.4vw,3.4rem);max-width:18ch;margin-bottom:14px}
+  .section-lead{color:var(--ash);max-width:46ch;font-size:1.05rem}
+
+  /* problem */
+  .problem .pain{
+    font-family:'Anton',sans-serif;text-transform:uppercase;line-height:1.02;
+    font-size:clamp(1.7rem,4.6vw,2.7rem);max-width:20ch;
+  }
+  .problem .pain b{color:var(--bonnet);font-weight:400}
+  .problem .note{margin-top:24px;color:var(--ash);max-width:42ch}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:1fr;gap:0;margin-top:34px;border-top:1px solid rgba(163,155,146,.14)}
+  .step{
+    display:grid;grid-template-columns:64px 1fr;gap:20px;
+    padding:26px 0;border-bottom:1px solid rgba(163,155,146,.14);align-items:start;
+  }
+  .step .no{font-family:'Anton',sans-serif;font-size:2.4rem;color:var(--ember);line-height:1}
+  .step h3{font-size:1.18rem;margin-bottom:6px}
+  .step p{color:var(--ash);font-size:.98rem;max-width:48ch}
+
+  /* outcomes */
+  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  .card{
+    background:var(--char-2);border:1px solid rgba(163,155,146,.14);
+    border-radius:4px;padding:28px 24px;transition:transform .2s ease,border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,90,31,.5)}
+  .card .mono{color:var(--ember);margin-bottom:14px;display:block}
+  .card h3{font-size:1.22rem;margin-bottom:8px}
+  .card p{color:var(--ash);font-size:.97rem}
+
+  /* proof — honest, ingredient transparency, no fake reviews */
+  .proof .panel{
+    margin-top:32px;background:var(--char-2);border:1px solid rgba(163,155,146,.16);
+    border-radius:6px;overflow:hidden;
+  }
+  .proof .row{display:flex;justify-content:space-between;gap:18px;padding:18px 24px;border-bottom:1px solid rgba(163,155,146,.12)}
+  .proof .row:last-child{border-bottom:0}
+  .proof .row .k{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--ash)}
+  .proof .row .v{font-weight:500;text-align:right}
+  .proof .honest{margin-top:18px;color:var(--ash);font-size:.9rem;max-width:52ch}
+
+  /* final cta */
+  .final{position:relative;text-align:center;padding:96px 0}
+  .final::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:radial-gradient(circle at 50% 120%, rgba(255,90,31,.22), rgba(255,90,31,0) 60%);
+  }
+  .final .wrap{position:relative;z-index:1}
+  .final h2{margin:0 auto 18px}
+  .final .gauge{justify-content:center;margin:0 auto 30px;width:max-content}
+  .pulse{animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 rgba(255,90,31,0)}50%{box-shadow:0 12px 38px rgba(255,90,31,.4)}}
+
+  footer{padding:42px 0;border-top:1px solid rgba(163,155,146,.14);color:var(--ash)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;font-size:.9rem}
+  .foot a{color:var(--bone);border-bottom:1px solid var(--ember);padding-bottom:1px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* desktop */
+  @media(min-width:760px){
+    .hero{padding:120px 0 100px}
+    .hero .wrap{grid-template-columns:1.35fr .65fr;align-items:center;gap:48px}
+    .steps{grid-template-columns:repeat(3,1fr);border-top:0;gap:1px;background:rgba(163,155,146,.14)}
+    .step{background:var(--char);border-bottom:0;padding:30px 26px;grid-template-columns:1fr}
+    .step .no{margin-bottom:14px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .gauge{height:64px}
+    .gauge .tick{width:13px}
+    .hero-gauge{flex-direction:column;align-items:flex-start;gap:14px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">TIN<span>DE</span></div>
+    <a href="#buy" class="btn">Buy a jar</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow mono">Small-batch · Peckham, London</div>
+      <h1 class="display">Flavour first.<br>Then the <span class="hot">heat</span>.</h1>
+      <p class="lede">Cold-infused Scotch bonnet chili oil for people who are done with <strong>supermarket jars of sugar and seed oil</strong>. Slow-burned in small batches. Spoon it on everything.</p>
+      <div class="cta-row">
+        <a href="#buy" class="btn pulse">Buy a jar — £9</a>
+        <a href="#made" class="btn btn-ghost">How it's made</a>
+      </div>
+    </div>
+    <div class="hero-gauge">
+      <div class="gauge lit" aria-label="Heat level: high, balanced">
+        <div class="tick on"></div><div class="tick on"></div><div class="tick on"></div>
+        <div class="tick on"></div><div class="tick"></div><div class="tick"></div>
+      </div>
+      <div class="label">
+        <div class="mono">Heat level</div>
+        <div style="font-weight:500;margin-top:4px">Serious, not silly. You'll taste the pepper before it bites.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="band problem">
+  <div class="wrap reveal">
+    <div class="kicker mono">The problem</div>
+    <p class="pain">Most shop-shelf chili oil is <b>sugar, seed oil and a sad pinch of flakes</b>. Plenty of burn. No actual flavour.</p>
+    <p class="note">You buy it for the kick and end up tasting nothing but heat and regret. The jar lives at the back of the cupboard. There has to be a better one.</p>
+  </div>
+</section>
+
+<!-- HOW IT'S MADE -->
+<section class="band" id="made">
+  <div class="wrap reveal">
+    <div class="kicker mono">How it's made</div>
+    <h2 class="display">Three steps. No shortcuts.</h2>
+    <p class="section-lead">Every batch is made by hand. Small enough that nothing hides.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="no">01</div>
+        <div><h3>Source the bonnets</h3><p>Ripe Scotch bonnets, picked for aroma, not just heat. The fruity, almost floral kind.</p></div>
+      </div>
+      <div class="step">
+        <div class="no">02</div>
+        <div><h3>Cold slow-infuse</h3><p>Low and slow into cold-pressed oil over days, so you pull the flavour out before the fire.</p></div>
+      </div>
+      <div class="step">
+        <div class="no">03</div>
+        <div><h3>Bottle in small batches</h3><p>Hand-filled, dated, and capped. When a batch is gone, it's gone until the next one.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="band">
+  <div class="wrap reveal">
+    <div class="kicker mono">What's in the jar</div>
+    <h2 class="display">A condiment that earns its shelf.</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="mono">01 / Taste</span>
+        <h3>Flavour you'll actually notice</h3>
+        <p>Fruity pepper, toasted aromatics, a clean finish. Heat that arrives second, on purpose.</p>
+      </div>
+      <div class="card">
+        <span class="mono">02 / Honest</span>
+        <h3>Real ingredients only</h3>
+        <p>No added sugar, no cheap seed-oil filler, nothing you can't pronounce. Read the label and relax.</p>
+      </div>
+      <div class="card">
+        <span class="mono">03 / Range</span>
+        <h3>Goes on everything</h3>
+        <p>Eggs, rice, noodles, pizza, jollof, plain bread at midnight. One jar, a hundred meals.</p>
+      </div>
+      <div class="card">
+        <span class="mono">04 / Batch</span>
+        <h3>Made the week you order</h3>
+        <p>Small batches, dated by hand. You get it fresh, not sat in a warehouse for a year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF: honest transparency, not fake reviews -->
+<section class="band proof">
+  <div class="wrap reveal">
+    <div class="kicker mono">Straight facts</div>
+    <h2 class="display">What you're paying for.</h2>
+    <div class="panel">
+      <div class="row"><span class="k">Ingredients</span><span class="v">Scotch bonnet, cold-pressed oil, garlic, ginger, sea salt</span></div>
+      <div class="row"><span class="k">Added sugar</span><span class="v">None</span></div>
+      <div class="row"><span class="k">Batch size</span><span class="v">~40 jars at a time, by hand</span></div>
+      <div class="row"><span class="k">Jar</span><span class="v">190ml · dated on the base</span></div>
+      <div class="row"><span class="k">Made in</span><span class="v">Peckham, London</span></div>
+    </div>
+    <p class="honest">TINDE is new, so there are no reviews to dress this up with yet. Just the jar and what's in it. Try a batch and tell us the truth.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="buy">
+  <div class="wrap">
+    <div class="gauge lit" aria-hidden="true">
+      <div class="tick on"></div><div class="tick on"></div><div class="tick on"></div>
+      <div class="tick on"></div><div class="tick"></div><div class="tick"></div>
+    </div>
+    <h2 class="display">Ruin every other<br>condiment you own.</h2>
+    <p class="section-lead" style="margin:0 auto 30px">One jar, £9. Free delivery on three or more. This batch is small.</p>
+    <a href="#" class="btn pulse" style="font-size:.92rem;padding:16px 30px">Buy a jar — £9</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand" style="font-size:1.2rem">TIN<span style="color:var(--ember)">DE</span></div>
+    <div>Slow-burned Scotch bonnet chili oil · Peckham, London</div>
+    <div>Site built with the free <a href="https://github.com/oloyeaaa/oloye-skills">site-builder</a> skill by Oloye.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.16});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+    // light the heat gauges when they scroll into view
+    var go=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('lit'); go.unobserve(e.target);} });
+    },{threshold:.4});
+    document.querySelectorAll('.gauge').forEach(function(el){go.observe(el)});
+  })();
+</script>
+</body>
+</html>
