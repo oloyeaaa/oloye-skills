@@ -1,4 +1,4 @@
-﻿---
+---
 name: review-replies
 description: Turn your customer reviews into on-brand replies in seconds. Paste your Google (or any) reviews and get a ready-to-post reply for each, thanking the good and handling the bad gracefully, in your business's voice. Use for "reply to my reviews", "respond to Google reviews", "review replies", "what do I say to this review", "answer my reviews".
 ---

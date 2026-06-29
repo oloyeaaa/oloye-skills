@@ -1,4 +1,4 @@
-﻿---
+---
 name: invoice-chaser
 description: Turn a list of unpaid invoices into polite, firm, ready-to-send chase emails drafted straight into Gmail, escalating in tone by how overdue each one is. Use when the user wants to chase late payments, send payment reminders, or follow up unpaid/overdue invoices, or says "chase my invoices", "invoice chaser", "payment reminders", "who owes me money", "get paid". Drafts only â€” never auto-sends.
 ---

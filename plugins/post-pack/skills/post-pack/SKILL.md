@@ -1,4 +1,4 @@
-﻿---
+---
 name: post-pack
 description: Turn one idea (or a quick voice note) into a week of ready-to-post social media captions in your voice, with hashtags, optionally scheduled to your channels. Use for "a week of posts", "write my social posts", "content for the week", "post pack", "I don't know what to post", "fill my content calendar".
 ---
