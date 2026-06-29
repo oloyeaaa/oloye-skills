@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "invoice-chaser",
+  "displayName": "Invoice Chaser",
+  "version": "1.0.0",
+  "description": "Turn your unpaid invoices into polite, firm chase emails drafted straight into Gmail, escalating in tone by how overdue each one is. Get paid faster without the awkward. Drafts only, never auto-sends.",
+  "author": {
+    "name": "Oloye. The AI Automation Guy"
+  },
+  "homepage": "https://github.com/oloyeaaa/oloye-skills",
+  "repository": "https://github.com/oloyeaaa/oloye-skills",
+  "license": "MIT",
+  "keywords": ["invoices", "payments", "gmail", "cashflow", "getting-paid", "small-business"]
+}

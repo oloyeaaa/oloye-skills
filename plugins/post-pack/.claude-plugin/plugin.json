@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "post-pack",
+  "displayName": "Post Pack",
+  "version": "1.0.0",
+  "description": "Turn one idea or a quick voice note into a week of ready-to-post social media captions in your voice, with hashtags, optionally scheduled to your channels. Fill your content calendar in 5 minutes.",
+  "author": {
+    "name": "Oloye. The AI Automation Guy"
+  },
+  "homepage": "https://github.com/oloyeaaa/oloye-skills",
+  "repository": "https://github.com/oloyeaaa/oloye-skills",
+  "license": "MIT",
+  "keywords": ["social-media", "content", "captions", "marketing", "metricool", "small-business"]
+}

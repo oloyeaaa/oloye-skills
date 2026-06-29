@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "review-replies",
+  "displayName": "Review Reply Machine",
+  "version": "1.0.0",
+  "description": "Turn your customer reviews into on-brand replies in seconds. Paste your Google reviews and get a ready-to-post reply for each, thanking the good and handling the bad gracefully, in your business's voice.",
+  "author": {
+    "name": "Oloye. The AI Automation Guy"
+  },
+  "homepage": "https://github.com/oloyeaaa/oloye-skills",
+  "repository": "https://github.com/oloyeaaa/oloye-skills",
+  "license": "MIT",
+  "keywords": ["reviews", "google-reviews", "reputation", "local-seo", "customer-service", "small-business"]
+}

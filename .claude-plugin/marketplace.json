@@ -13,6 +13,21 @@
       "name": "site-builder",
       "source": "./plugins/site-builder",
       "description": "Build a high-converting one-page website with a real, committed design direction, not generic AI slop. Interviews you first, commits a design system tied to your business, then outputs a single self-contained index.html you can open and host. No frameworks, no build step."
+    },
+    {
+      "name": "invoice-chaser",
+      "source": "./plugins/invoice-chaser",
+      "description": "Turn your unpaid invoices into polite, firm chase emails drafted straight into Gmail, escalating by how overdue each one is. Get paid faster without the awkward. Drafts only, never auto-sends."
+    },
+    {
+      "name": "review-replies",
+      "source": "./plugins/review-replies",
+      "description": "Turn your customer reviews into on-brand replies in seconds. Paste your Google reviews and get a ready-to-post reply for each, thanking the good and handling the bad gracefully, in your business's voice."
+    },
+    {
+      "name": "post-pack",
+      "source": "./plugins/post-pack",
+      "description": "Turn one idea or voice note into a week of ready-to-post social media captions in your voice, with hashtags, optionally scheduled to your channels. Fill your content calendar in 5 minutes."
     }
   ]
 }
